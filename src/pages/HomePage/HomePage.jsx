@@ -5,8 +5,6 @@ import ListCard, {
     loader as loaderCharacter,
     loader as loaderLocation,
 } from "../../components/ListCard/ListCard";
-import CharacterСard from "../../components/CharacterСard/CharacterСard";
-import LocationsCard from "../../components/LocationsCard/LocationsCard";
 
 export async function loader() {
     return defer({
@@ -30,9 +28,7 @@ function HomePage() {
                             <h2 className="title">Character</h2>
                             <button>See all</button>
                         </div>
-                        <ListCard maxEl={8}>
-                            <CharacterСard />
-                        </ListCard>
+                        <ListCard maxEl={3} type={"char"} />
                     </section>
                 </Await>
             </Suspense>
@@ -43,9 +39,7 @@ function HomePage() {
                             <h2 className="title">Locations</h2>
                             <button>See all</button>
                         </div>
-                        <ListCard maxEl={4}>
-                            <LocationsCard />
-                        </ListCard>
+                        <ListCard maxEl={8} type={"location"} />
                     </section>
                 </Await>
             </Suspense>

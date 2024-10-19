@@ -4,7 +4,6 @@ import "./CharacterСard.css";
 function CharacterСard({ info: pers }) {
     return (
         <div className="card">
-            {console.log(pers)}
             <img className="img" src={pers.image} alt={pers.name} />
             <h3 className="name">{pers.name}</h3>
             <ul className="properties">
