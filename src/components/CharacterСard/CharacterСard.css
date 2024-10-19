@@ -1,0 +1,55 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 16px;
+    transition: background-color 0.5s;
+}
+
+.card:hover {
+    background-color: #f1f1f1;
+}
+
+.img {
+    border-radius: 16px;
+    max-height: 200px;
+    object-fit: cover;
+}
+
+.name {
+    font-weight: 700;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+.properties {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.status,
+.species,
+.location {
+    position: relative;
+    padding-left: 20px;
+}
+
+.status::before,
+.species::before,
+.location::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.status::before {
+    content: url(../../assets/status.svg);
+}
+.species::before {
+    content: url(../../assets/species.svg);
+}
+
+.location::before {
+    content: url(../../assets/planet.svg);
+}
