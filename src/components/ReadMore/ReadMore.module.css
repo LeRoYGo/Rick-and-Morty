@@ -1,13 +1,21 @@
 .btn {
     background-color: #11b0c8;
-    padding: 6px 6px;
+    padding: 5px;
+    padding-left: 30px;
     border-radius: 25px;
 
     display: flex;
     align-items: center;
     justify-content: center;
     column-gap: 3px;
-}
-.text {
     color: #fff;
+    position: relative;
+}
+
+.btn::before {
+    content: url("../../assets/Read-More.svg");
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-45%);
 }

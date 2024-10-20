@@ -1,6 +1,21 @@
-.main {
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: flex-start;
+    align-items: flex-start;
+
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.wrapper:not(:last-child) {
+    margin-bottom: 20px;
+}
+.list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
 }
 
 .row {
@@ -12,16 +27,6 @@
 .title {
     font-size: 24px;
     font-weight: 700;
-}
-
-.wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.wrapper:not(:last-child) {
-    margin-bottom: 20px;
 }
 
 .btn {
@@ -40,4 +45,12 @@
     content: url("../../assets/xs.svg");
     position: absolute;
     left: 13px;
+}
+
+.row-list {
+    align-self: center;
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    justify-content: center;
 }

@@ -1,0 +1,31 @@
+.wrapper {
+    border-bottom: 2px solid #11b0c8;
+
+    margin-bottom: 20px;
+}
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 24px;
+    padding: 5% 0;
+}
+
+.title {
+    font-size: 48px;
+    font-weight: 700;
+    max-width: 450px;
+}
+
+.slogan {
+    color: #11b0c8;
+}
