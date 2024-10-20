@@ -1,14 +1,16 @@
+/* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
-import "./ListCard.css";
+import s from "./ListCard.module.css";
 import { useAsyncValue } from "react-router-dom";
 import CharacterСard from "../CharacterСard/CharacterСard";
 import LocationsCard from "../LocationsCard/LocationsCard";
+import EpisodeСard from "../EpisodeСard/EpisodeСard";
 
 export async function loader(url) {
     const res = await fetch(url);
     return res.json();
 }
-function ListCard({ maxEl, type }) {
+function ListCard({ maxEl, type, style = "" }) {
     const items = useAsyncValue();
 
     const listItems = items.results.map((item, index) => {
@@ -27,9 +29,15 @@ function ListCard({ maxEl, type }) {
                         <LocationsCard info={item} />
                     </li>
                 );
+            case "episodes":
+                return (
+                    <li key={item.id}>
+                        <EpisodeСard info={item} />
+                    </li>
+                );
         }
     });
 
-    return <ul className="list">{listItems}</ul>;
+    return <ul className={`${s["list"]} ${s[style]}`}>{listItems}</ul>;
 }
 export default ListCard;

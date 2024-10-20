@@ -1,0 +1,19 @@
+.footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+
+    display: flex;
+    justify-content: space-between;
+}
+.toUp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px;
+    border-radius: 50%;
+    border: 2px solid #000000;
+}
+.toUp img {
+    max-width: 30px;
+}

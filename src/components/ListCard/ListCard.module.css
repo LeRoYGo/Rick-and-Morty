@@ -1,0 +1,16 @@
+.list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.row {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+}

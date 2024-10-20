@@ -1,0 +1,40 @@
+.card {
+    height: 100%;
+
+    padding: 12px;
+    background-color: #f9f9f9;
+    transition: background-color 0.5s;
+
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas:
+        "img episode episode"
+        "read-more read-more div4";
+    align-items: center;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    border-radius: 16px;
+    width: 240px;
+}
+
+.card:hover {
+    background-color: #f1f1f1;
+}
+
+.img {
+    grid-area: img;
+}
+
+.episode {
+    grid-area: episode;
+}
+
+.read-more {
+    justify-self: start;
+    grid-area: read-more;
+}
+.div4 {
+    justify-self: center;
+    transform: scale(2);
+    grid-area: div4;
+}

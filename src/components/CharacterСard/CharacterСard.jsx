@@ -1,16 +1,21 @@
 /* eslint-disable react/prop-types */
-import "./CharacterСard.css";
+import { Link } from "react-router-dom";
+import ReadMore from "../ReadMore/ReadMore";
+import s from "./CharacterСard.module.css";
 
 function CharacterСard({ info: pers }) {
     return (
-        <div className="card">
-            <img className="img" src={pers.image} alt={pers.name} />
-            <h3 className="name">{pers.name}</h3>
-            <ul className="properties">
-                <li className="status">{pers.status}</li>
-                <li className="species">{pers.species}</li>
-                <li className="location">{pers.origin.name}</li>
+        <div className={s["card"]}>
+            <img className={s["img"]} src={pers.image} alt={pers.name} />
+            <h3 className={s["name"]}>{pers.name}</h3>
+            <ul className={s["properties"]}>
+                <li className={s["status"]}>{pers.status}</li>
+                <li className={s["species"]}>{pers.species}</li>
+                <li className={s["location"]}>{pers.origin.name}</li>
             </ul>
+            <Link to={pers.url} className={s["read-more"]}>
+                <ReadMore />
+            </Link>
         </div>
     );
 }

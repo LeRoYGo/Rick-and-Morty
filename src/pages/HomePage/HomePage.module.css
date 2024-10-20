@@ -1,0 +1,43 @@
+.main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    column-gap: 15px;
+    align-items: center;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.wrapper:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: block;
+    background-color: #11b0c8;
+    padding: 12px;
+    padding-left: 40px;
+    padding-right: 15px;
+    color: #ffff;
+    border-radius: 32px;
+
+    position: relative;
+}
+
+.btn::before {
+    content: url("../../assets/xs.svg");
+    position: absolute;
+    left: 13px;
+}
