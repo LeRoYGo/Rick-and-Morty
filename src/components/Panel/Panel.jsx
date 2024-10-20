@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import s from "./Panel.module.css";
+import styles from "./Panel.module.css";
 import { useAsyncValue } from "react-router-dom";
 import CharacterСard from "../CharacterСard/CharacterСard";
 import LocationsCard from "../LocationsCard/LocationsCard";
@@ -28,12 +28,18 @@ function Panel({ title, isSeeAll = false, maxCountEl = 100 }) {
     });
 
     return (
-        <section className={s["wrapper"]}>
-            <div className={s["row"]}>
-                <h2 className={s["title"]}>{title}</h2>
-                {isSeeAll ? <button className={s["btn"]}>See all</button> : ""}
+        <section className={styles.wrapper}>
+            <div className={styles.row}>
+                <h2 className={styles.title}>{title}</h2>
+                {isSeeAll ? (
+                    <button className={styles["btn"]}>See all</button>
+                ) : (
+                    ""
+                )}
             </div>
-            <ul className={`${s["list"]} ${s[style]}`}>{listItems}</ul>
+            <ul className={`${styles.list} ${styles[style] ?? ""}`}>
+                {listItems}
+            </ul>
         </section>
     );
 }

@@ -29,7 +29,7 @@
     grid-area: episode;
 }
 
-.read-more {
+.readMore {
     justify-self: start;
     grid-area: read-more;
 }

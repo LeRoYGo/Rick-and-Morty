@@ -1,20 +1,20 @@
 /* eslint-disable react/prop-types */
-import s from "./EpisodeСard.module.css";
+import styles from "./EpisodeСard.module.css";
 import Play from "../../assets/play.svg";
 import ReadMore from "../ReadMore/ReadMore";
 import { Link } from "react-router-dom";
 
 function EpisodeСard({ info: episode }) {
     return (
-        <div className={s["card"]}>
-            <img className={s["img"]} src={Play} alt="Play" />
-            <span className={s["episode"]}>
+        <div className={styles.card}>
+            <img className={styles.img} src={Play} alt="Play" />
+            <span className={styles.episode}>
                 {`${episode.name} | ${episode.episode}`}
             </span>
-            <Link to={episode.url} className={s["read-more"]}>
+            <Link to={episode.url} className={styles.readMore}>
                 <ReadMore />
             </Link>
-            <span className={s["div4"]}>&#9825;</span>
+            <span className={styles.div4}>&#9825;</span>
         </div>
     );
 }
