@@ -5,6 +5,7 @@ import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import HomePage, { loaderHome } from "./pages/HomePage";
 import Layout from "./layout/Layout";
 import "./index.css";
+import ItemPage from "./pages/ItemPage";
 
 const router = createBrowserRouter([
     {
@@ -18,6 +19,12 @@ const router = createBrowserRouter([
                 loader: loaderHome,
                 errorElement: <ErrorPage />,
             },
+            {
+                path: ":category/:id",
+                element: <ItemPage />,
+                errorElement: <ErrorPage />,
+            },
+
             // Добавить страницы Character, Locations, Episodes
         ],
     },
