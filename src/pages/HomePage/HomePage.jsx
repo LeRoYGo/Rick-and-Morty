@@ -2,6 +2,10 @@ import { Suspense } from "react";
 import { useLoaderData, Await } from "react-router-dom";
 import Hero from "../../components/Hero/Hero";
 import Panel from "../../components/Panel/Panel";
+import LocationsCard from "../../components/LocationsCard/LocationsCard";
+import EpisodeСard from "../../components/EpisodeСard/EpisodeСard";
+import CharacterСard from "../../components/CharacterСard/CharacterСard";
+import styles from "./HomePage.module.css";
 
 function HomePage() {
     const { pers, location, episode } = useLoaderData();
@@ -9,19 +13,60 @@ function HomePage() {
     return (
         <>
             <Hero />
-            <Suspense fallback={<>Загрузка</>}>
+            <Suspense fallback={<h2>Загрузка</h2>}>
                 <Await resolve={pers}>
-                    <Panel title="Character" isSee All={true} maxCountEl={8} />
+                    {(pers) => (
+                        <Panel
+                            title="Character"
+                            isSeeAll={true}
+                            path="/character/1"
+                        >
+                            <ul className={styles.list}>
+                                {pers.map((item) => {
+                                    return (
+                                        <li key={item.id}>
+                                            <CharacterСard info={item} />
+                                        </li>
+                                    );
+                                })}
+                            </ul>
+                        </Panel>
+                    )}
                 </Await>
             </Suspense>
-            <Suspense fallback={<>Загрузка</>}>
+            <Suspense fallback={<h2>Загрузка</h2>}>
                 <Await resolve={location}>
-                    <Panel title="Locations" isSeeAll={true} maxCountEl={7} />
+                    {(location) => (
+                        <Panel title="Locations" isSeeAll={true}>
+                            <ul className={styles.rowList}>
+                                {location.map((item) => {
+                                    return (
+                                        <li key={item.id}>
+                                            <LocationsCard info={item} />
+                                        </li>
+                                    );
+                                })}
+                            </ul>
+                        </Panel>
+                    )}
                 </Await>
             </Suspense>
-            <Suspense fallback={<>Загрузка</>}>
+            <Suspense fallback={<h2>Загрузка</h2>}>
                 <Await resolve={episode}>
-                    <Panel title="Episodes" isSeeAll={true} maxCountEl={4} />
+                    {(episode) => (
+                        <Panel title="Episodes" isSeeAll={true}>
+                            {console.log(episode)}
+                            <ul className={styles.rowList}>
+                                {episode.map((item) => {
+                                    return (
+                                        <li key={item.id}>
+                                            <EpisodeСard info={item} />
+                                        </li>
+                                    );
+                                })}
+                            </ul>
+                        </Panel>
+                    )}
                 </Await>
             </Suspense>
         </>

@@ -1,45 +1,22 @@
 /* eslint-disable react/prop-types */
+import { Link } from "react-router-dom";
 import styles from "./Panel.module.css";
-import { useAsyncValue } from "react-router-dom";
-import CharacterСard from "../CharacterСard/CharacterСard";
-import LocationsCard from "../LocationsCard/LocationsCard";
-import EpisodeСard from "../EpisodeСard/EpisodeСard";
 
-function Panel({ title, isSeeAll = false, maxCountEl = 100 }) {
-    let style = "";
-    const items = useAsyncValue();
-    const listItems = items.results.map((item, index) => {
-        if (index >= maxCountEl) return;
-        let component = "";
-        switch (title) {
-            case "Character":
-                component = <CharacterСard info={item} />;
-                break;
-            case "Locations":
-                style = "row-list";
-                component = <LocationsCard info={item} />;
-                break;
-            case "Episodes":
-                style = "row-list";
-                component = <EpisodeСard info={item} />;
-                break;
-        }
-        return <li key={item.id}>{component}</li>;
-    });
-
+function Panel({ title, isSeeAll = false, children, path }) {
+    const scrollTop = () => {
+        window.scrollTo(pageYOffset, 0);
+    };
     return (
         <section className={styles.wrapper}>
             <div className={styles.row}>
                 <h2 className={styles.title}>{title}</h2>
-                {isSeeAll ? (
-                    <button className={styles["btn"]}>See all</button>
-                ) : (
-                    ""
+                {isSeeAll && (
+                    <Link to={path} className={styles.btn} onClick={scrollTop}>
+                        See all
+                    </Link>
                 )}
             </div>
-            <ul className={`${styles.list} ${styles[style] ?? ""}`}>
-                {listItems}
-            </ul>
+            {children}
         </section>
     );
 }

@@ -1,48 +1,50 @@
 .card {
     display: flex;
-    flex-direction: column;
-    background-color: #f9f9f9;
-    gap: 8px;
-    border-radius: 8px;
     padding: 16px;
-    transition: background-color 0.5s;
-}
-
-.card:hover {
-    background-color: #f1f1f1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 60px;
+    gap: 65px;
 }
 
 .img {
     border-radius: 16px;
-    max-height: 200px;
+    height: 460px;
+    max-width: 370px;
     object-fit: cover;
 }
 
 .name {
     font-weight: 700;
-    padding-top: 16px;
-    padding-bottom: 16px;
+    font-size: 48px;
+    color: #313234;
 }
 .properties {
-    gap: 15px;
+    gap: 30px;
+    display: flex;
+}
+.list {
     display: flex;
     flex-direction: column;
+    row-gap: 50px;
 }
 
 .status,
 .species,
+.gender,
 .location {
     position: relative;
-    padding-left: 35px;
+    padding-left: 40px;
+    font-size: 24px;
 }
 
 .status::before,
 .species::before,
+.gender::before,
 .location::before {
     position: absolute;
     left: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 0;
 }
 
 .status::before {
@@ -51,7 +53,9 @@
 .species::before {
     content: url(../../assets/species.svg);
 }
-
+.gender::before {
+    content: url(../../assets/gender.svg);
+}
 .location::before {
     content: url(../../assets/planet.svg);
 }
