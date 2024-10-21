@@ -25,8 +25,6 @@ const router = createBrowserRouter([
                 element: <ItemPage />,
                 loader: loaderItem,
             },
-
-            // Добавить страницы Character, Locations, Episodes
         ],
     },
 ]);

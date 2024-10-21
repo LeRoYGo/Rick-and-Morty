@@ -37,7 +37,11 @@ function HomePage() {
             <Suspense fallback={<h2>Загрузка</h2>}>
                 <Await resolve={location}>
                     {(location) => (
-                        <Panel title="Locations" isSeeAll={true}>
+                        <Panel
+                            title="Locations"
+                            isSeeAll={true}
+                            path="/location/1"
+                        >
                             <ul className={styles.rowList}>
                                 {location.map((item) => {
                                     return (
@@ -54,7 +58,11 @@ function HomePage() {
             <Suspense fallback={<h2>Загрузка</h2>}>
                 <Await resolve={episode}>
                     {(episode) => (
-                        <Panel title="Episodes" isSeeAll={true}>
+                        <Panel
+                            title="Episodes"
+                            isSeeAll={true}
+                            path="/episode/1"
+                        >
                             {console.log(episode)}
                             <ul className={styles.rowList}>
                                 {episode.map((item) => {

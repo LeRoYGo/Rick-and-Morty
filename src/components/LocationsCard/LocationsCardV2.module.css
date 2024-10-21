@@ -1,0 +1,46 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+.wrapper {
+    border-bottom: 2px solid #11b0c8;
+    margin-bottom: 20px;
+}
+.img {
+    max-width: 72px;
+}
+
+.name {
+    font-weight: 700;
+    font-size: 48px;
+    color: #313234;
+}
+
+.properties {
+    display: flex;
+    gap: 25px;
+    font-size: 24px;
+}
+
+.type,
+.dimension {
+    position: relative;
+    padding-left: 30px;
+}
+.type::before {
+    content: url("../../assets/planet.svg");
+    transform: scale(1.5) translateY(-5%);
+}
+.dimension::before {
+    content: url("../../assets/dimension.svg");
+    transform: translate(-10%, 10%);
+}
+.type::before,
+.dimension::before {
+    position: absolute;
+    left: 0;
+}

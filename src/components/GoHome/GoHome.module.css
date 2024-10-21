@@ -1,0 +1,17 @@
+.toUp {
+    padding: 9px;
+    border-radius: 50%;
+    border: 2px solid #000000;
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin-left: 50px;
+}
+.toUp img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 30px;
+    transform: rotate(-90deg) translate(-10%, 0%);
+}

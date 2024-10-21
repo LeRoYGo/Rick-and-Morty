@@ -1,0 +1,48 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+.wrapper {
+    border-bottom: 2px solid #11b0c8;
+    margin-bottom: 20px;
+}
+
+.img {
+    width: 58px;
+}
+
+.name {
+    font-weight: 700;
+    font-size: 48px;
+    color: #313234;
+}
+
+.properties {
+    display: flex;
+    gap: 40px;
+    font-size: 24px;
+}
+.air_date,
+.dimension {
+    position: relative;
+    padding-left: 33px;
+}
+
+.air_date::before,
+.dimension::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.air_date::before {
+    content: url("../../assets/сalendar.svg");
+}
+
+.dimension::before {
+    content: url("../../assets//playlist.svg");
+}
