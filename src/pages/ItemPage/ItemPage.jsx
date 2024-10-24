@@ -24,7 +24,6 @@ function ItemPage() {
                 <Await resolve={persAll}>
                     {(persAll) => (
                         <Panel title={`${category} All`}>
-                            {console.log(persAll)}
                             <ul
                                 className={`${styles.list} ${
                                     (category == "location" ||

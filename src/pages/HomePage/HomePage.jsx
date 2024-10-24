@@ -63,7 +63,6 @@ function HomePage() {
                             isSeeAll={true}
                             path="/episode/1"
                         >
-                            {console.log(episode)}
                             <ul className={styles.rowList}>
                                 {episode.map((item) => {
                                     return (
